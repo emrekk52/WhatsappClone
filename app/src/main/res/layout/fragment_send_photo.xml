@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SendPhotoFragment">
+
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/send_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/off_black"
+        android:contentDescription="@null" />
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@null"
+        android:padding="10dp"
+        android:src="@drawable/close"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/messageInputContainer"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_margin="6dp"
+        android:layout_marginEnd="12dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/input_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/voiceRecordingOrSend"
+        tools:context="com.example.chattutorial.ChannelActivity">
+
+        <ImageButton
+            android:id="@+id/addEmoticon"
+            android:layout_width="21dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/emoji_icon"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:tint="@color/message_input_button_inactive" />
+
+        <EditText
+            android:id="@+id/messageInput"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:background="@android:color/transparent"
+            android:hint="Mesaj"
+            app:layout_constraintLeft_toRightOf="@+id/addEmoticon" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/voiceRecordingOrSend"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="6dp"
+        android:src="@drawable/send_icon"
+        app:backgroundTint="@color/floating_message_send"
+        app:fabCustomSize="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/messageInputContainer"
+        app:tint="@color/white" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

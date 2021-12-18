@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:paddingRight="15dp"
+        android:id="@+id/custom_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:paddingLeft="15dp"
+        android:text="Bu telefon numarasını doğrulayacağız"
+        android:textColor="@color/off_black"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/custom_phone_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+     android:padding="10dp"
+        android:text="+90 542 533 5584"
+        android:textColor="@color/off_black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/custom_message" />
+
+
+    <TextView
+        android:id="@+id/custom_okey"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:text="Onaylıyor musunuz, yoksa numarayı düzenlemek ister misiniz?"
+        android:textColor="@color/off_black"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/custom_phone_number" />
+
+
+    <TextView
+        android:id="@+id/custom_edit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Düzenle"
+        android:textColor="@color/green_dark"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:paddingBottom="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/custom_okey" />
+
+    <TextView
+        android:id="@+id/custom_ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Tamam"
+        android:textColor="@color/green_dark"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:paddingBottom="10dp"
+       app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/custom_okey" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

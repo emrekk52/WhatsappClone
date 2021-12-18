@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+
+        <variable
+            name="storymodel"
+            type="com.whatsapp.clone.model.StoryListModel" />
+
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/clicklable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_margin="5dp"
+            android:id="@+id/photo_l"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <agency.tango.android.avatarview.views.AvatarView
+                android:id="@+id/av_photo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true" />
+
+            <com.devlomi.circularstatusview.CircularStatusView
+                android:id="@+id/circular_status_view"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:portion_color="@color/green"
+                app:portion_spacing="5dp"
+                app:portion_width="3dp"
+                app:portions_count="1" />
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/photo_l"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{storymodel.model.name}"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/story_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

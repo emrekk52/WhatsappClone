@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuSearch"
+        android:icon="@drawable/search_icon"
+        app:showAsAction="ifRoom"
+        app:iconTint="@color/white"
+        android:title="Arama">
+    </item>
+    <item
+        android:id="@+id/menuSettings"
+        android:icon="@drawable/search_icon"
+        app:iconTint="@color/white"
+        app:showAsAction="never"
+        android:title="Ayarlar">
+    </item>
+
+    <item
+        android:id="@+id/myProfile"
+        app:showAsAction="never"
+        android:title="Profilim">
+    </item>
+</menu>

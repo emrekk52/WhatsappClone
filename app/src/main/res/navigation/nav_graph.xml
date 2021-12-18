@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.whatsapp.clone.ui.home.HomeFragment"
+        android:label="fragment_home">
+        <action
+            android:id="@+id/nav_home_to_chats"
+            app:destination="@id/nav_chats"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_nav_home_to_chatStartFragment"
+            app:destination="@id/chatStartFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_nav_home_to_storyDetailFragment"
+            app:destination="@id/storyDetailFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            android:id="@+id/action_nav_home_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_chats"
+        android:name="com.whatsapp.clone.fragments.ChatsFragment"
+        android:label="fragment_chats"
+        tools:layout="@layout/fragment_chats">
+
+        <argument
+            android:name="model"
+            app:argType="com.whatsapp.clone.model.MyProfileModel" />
+        <action
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            android:id="@+id/action_nav_chats_to_sendPhotoFragment"
+            app:destination="@id/sendPhotoFragment" />
+        <action
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            android:id="@+id/action_nav_chats_to_zoomPhotoFragment"
+            app:destination="@id/zoomPhotoFragment" />
+        <action
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            android:id="@+id/action_nav_chats_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_accept"
+        android:name="com.whatsapp.clone.ui.login.AcceptFragment"
+        android:label="fragment_accept"
+        tools:layout="@layout/fragment_accept">
+        <action
+            android:id="@+id/action_nav_accept_to_verifiedPhoneFragment"
+            app:destination="@id/nav_phone"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_phone"
+        android:name="com.whatsapp.clone.ui.login.VerifiedPhoneFragment"
+        android:label="fragment_verified_phone"
+        tools:layout="@layout/fragment_verified_phone">
+        <action
+            android:id="@+id/action_verifiedPhoneFragment_to_smsVerifiedFragment"
+            app:destination="@id/nav_sms"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_sms"
+        android:name="com.whatsapp.clone.ui.login.SmsVerifiedFragment"
+        android:label="fragment_sms_verified"
+        tools:layout="@layout/fragment_sms_verified">
+
+        <argument
+            android:name="phone"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_nav_sms_to_nav_profile_edit"
+            app:destination="@id/nav_profile_edit"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_profile_edit"
+        android:name="com.whatsapp.clone.ui.login.ProfileFragment"
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/action_nav_profile_edit_to_nav_home"
+            app:destination="@id/nav_home"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatStartFragment"
+        android:name="com.whatsapp.clone.ui.chat_list.ChatStartFragment"
+        android:label="fragment_chat_start"
+        tools:layout="@layout/fragment_chat_start">
+        <action
+            android:id="@+id/action_chatStartFragment_to_nav_chats"
+            app:destination="@id/nav_chats"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/storyDetailFragment"
+        android:name="com.whatsapp.clone.fragments.StoryDetailFragment"
+        android:label="fragment_story_detail"
+        tools:layout="@layout/fragment_story_detail">
+        <argument
+            android:name="storymodel"
+            app:argType="com.whatsapp.clone.model.StoryListModel" />
+        <action
+            android:id="@+id/action_storyDetailFragment_to_seenMyStoryFragment"
+            app:destination="@id/seenMyStoryFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/seenMyStoryFragment"
+        android:name="com.whatsapp.clone.fragments.SeenMyStoryFragment"
+        android:label="fragment_seen_my_story"
+        tools:layout="@layout/fragment_seen_my_story">
+        <argument
+            android:name="profile"
+            app:argType="com.whatsapp.clone.model.MyProfileModel[]" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/sendPhotoFragment"
+        android:name="com.whatsapp.clone.fragments.SendPhotoFragment"
+        android:label="fragment_send_photo"
+        tools:layout="@layout/fragment_send_photo" >
+        <argument
+            android:name="profileid"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/zoomPhotoFragment"
+        android:name="com.whatsapp.clone.fragments.ZoomPhotoFragment"
+        android:label="fragment_zoom_photo"
+        tools:layout="@layout/fragment_zoom_photo" >
+        <argument
+            android:name="image_url"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.whatsapp.clone.profile.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" >
+        <argument
+            android:name="profileid"
+            app:argType="string" />
+    </fragment>
+
+
+</navigation>

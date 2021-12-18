@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WhatsApp</string>
+    <string name="tv_description">WhatsApp <font color='#0EA9EF'>Hizmet Koşulları ve Gizlilik Politikası\'nı</font> onaylamak için \"Onayla ve devam et\"a dokunun.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="wp_verified_description">WhatsApp telefon numaranızı doğrulamak için bir SMS mesajı gönderecek. Ülke kodunuzu ve telefon numaranızı girin:</string>
+    <string name="wp_info">Operatör SMS ücreti uygulanabilir</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edittext_hint"><font size="40">––– –––</font></string>
+    <integer name="anim_duration">200</integer>
+
+
+</resources>

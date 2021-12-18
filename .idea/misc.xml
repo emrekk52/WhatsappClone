@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable-v24/call_icon.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable-v24/ic_videocam_black_24dp.xml" value="0.15" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable-v24/videocall_icon.xml" value="0.15324074074074073" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/app_logo.xml" value="0.15925925925925927" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/block.xml" value="0.2310185185185185" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/camera.xml" value="0.240625" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/camera_icon.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/date_seperate_bg.xml" value="0.14814814814814814" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/delete.xml" value="0.1712962962962963" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/dot_badge.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/edit.xml" value="0.2310185185185185" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/emoji_icon.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/file_icon.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/from_chat_bubble.xml" value="0.536" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/ic_mic_black_24dp.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/input_background.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/message_icon.xml" value="0.240625" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/more_horiz.xml" value="0.2100456621004566" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/scroll_bottom.xml" value="0.2361111111111111" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/scroll_bottom_bg.xml" value="0.2361111111111111" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/search_icon.xml" value="0.221875" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/to_chat_bubble.xml" value="0.20277777777777778" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/drawable/unread_message_bg.xml" value="0.19537037037037036" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout-v28/fragment_send_photo.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/app_bar_layout.xml" value="0.259375" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/bubble_message.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/custom_contact.xml" value="0.264" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/custom_dialog.xml" value="0.264" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/custom_verified_dialog.xml" value="0.2" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/date_seperate.xml" value="0.4" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/date_seperator.xml" value="0.17731481481481481" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/edit_dialog_profile.xml" value="0.19027777777777777" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_accept.xml" value="0.264" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_chat_list.xml" value="0.175" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_chat_list_design.xml" value="0.2125" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_chat_start.xml" value="0.259375" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_chats.xml" value="0.176" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_empty.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_seen_my_story.xml" value="0.264" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_send_photo.xml" value="0.19953703703703704" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_sms_verified.xml" value="0.2" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_story.xml" value="0.2" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_story_detail.xml" value="0.2" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_user_profile.xml" value="0.264" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_verified_phone.xml" value="0.264" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/fragment_zoom_photo.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/from_chat_item.xml" value="0.264" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/list_item_channel_custom.xml" value="0.264" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/list_item_chat_custom.xml" value="0.264" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/list_story_item_custom.xml" value="0.4" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/to_chat_item.xml" value="0.2" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/layout/view_message_input.xml" value="0.2" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/menu/menu_channel.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/menu/menu_main.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/emrek/AndroidStudioProjects/WhatsappClone/app/src/main/res/xml/providerfile.xml" value="0.1921875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

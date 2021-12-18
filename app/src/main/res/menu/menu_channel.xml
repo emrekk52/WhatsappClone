@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/miPhone"
+        android:icon="@drawable/call_icon"
+        app:showAsAction="ifRoom"
+        app:iconTint="@color/white"
+        android:title="Phone">
+    </item>
+    <item
+        android:id="@+id/miCompose"
+        android:icon="@drawable/search_icon"
+        app:iconTint="@color/white"
+        app:showAsAction="never"
+        android:title="Ayarlar">
+    </item>
+</menu>
