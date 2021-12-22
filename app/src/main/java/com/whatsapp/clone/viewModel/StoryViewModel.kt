@@ -68,7 +68,7 @@ class StoryViewModel(application: Application) : AndroidViewModel(application) {
 
     fun uploadStory(photo_uri: Uri, context: Context, alertDialog: AlertDialog) {
 
-        val ref = crud.storage.child("stories/${UUID.randomUUID()}}")
+        val ref = crud.storage.child("stories/${UUID.randomUUID()}")
         val bitmap = MediaStore.Images.Media.getBitmap(context.contentResolver, photo_uri)
         val byteArrayOutputStream = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.JPEG, 25, byteArrayOutputStream)
@@ -174,14 +174,17 @@ class StoryViewModel(application: Application) : AndroidViewModel(application) {
         listModel.forEach {
 
 
-
-
             crud.database.collection("story${it.profile_id}")
                 .orderBy("story_time", Query.Direction.ASCENDING)
                 .addSnapshotListener { value, error ->
                     if (error == null) {
                         val list = arrayListOf<StoryModel>()
-                        var profile = MyProfileModel(it.name, it.profile_photo, it.profile_id, it.phone_number)
+                        var profile = MyProfileModel(
+                            it.name,
+                            it.profile_photo,
+                            it.profile_id,
+                            it.phone_number
+                        )
 
                         value?.documents?.forEach {
 

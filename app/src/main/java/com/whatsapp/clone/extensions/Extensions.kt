@@ -25,6 +25,7 @@ import javax.crypto.Cipher.SECRET_KEY
 import javax.crypto.spec.IvParameterSpec
 import javax.crypto.spec.SecretKeySpec
 import android.R.string
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import com.google.firebase.Timestamp
 import org.bouncycastle.jce.provider.BouncyCastleProvider
@@ -50,9 +51,14 @@ import androidx.core.content.ContextCompat
 
 import android.view.animation.AccelerateInterpolator
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import com.github.chrisbanes.photoview.PhotoView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.squareup.picasso.Picasso
+import com.whatsapp.clone.VideoCallActivity
+import com.whatsapp.clone.VoiceCallActivity
+import com.whatsapp.clone.databaseprocess.firebase_CRUD
+import com.whatsapp.clone.model.MyProfileModel
 
 
 fun Context.toastShow(message: String) {
@@ -92,6 +98,42 @@ fun Activity.dialogShow(message: String): AlertDialog {
     val builder = AlertDialog.Builder(this).setView(view).show()
 
     builder.findViewById<TextView>(R.id.custom_message).text = message
+
+    builder.setCancelable(false)
+
+    return builder
+}
+
+
+fun Activity.callShow(profile: MyProfileModel, state: String): AlertDialog {
+
+    val view = LayoutInflater.from(this).inflate(R.layout.call_design, null)
+
+    val builder = AlertDialog.Builder(this).setView(view).show()
+
+    builder.findViewById<TextView>(R.id.call_name).text = profile.name
+    builder.findViewById<TextView>(R.id.call_phone).text = profile.phone_number
+    profile.profile_photo?.let { builder.findViewById<ImageView>(R.id.callPhoto).upload(it) }
+
+    builder.findViewById<TextView>(R.id.reject).setOnClickListener {
+        val crud = firebase_CRUD()
+        crud.database.collection("call${crud.getCurrentId()}").document("call")
+            .delete()
+        builder.dismiss()
+    }
+
+
+    builder.findViewById<TextView>(R.id.accept).setOnClickListener {
+        val intent = if (state.equals("video"))
+            Intent(applicationContext, VideoCallActivity::class.java)
+        else
+            Intent(applicationContext, VoiceCallActivity::class.java)
+        intent.putExtra("profile_name", profile.name)
+        intent.putExtra("profile_photo", profile.profile_photo)
+        intent.putExtra("profile_id", "")
+        startActivity(intent)
+        builder.dismiss()
+    }
 
     builder.setCancelable(false)
 
@@ -382,4 +424,9 @@ fun AvatarView.upload(url: String) {
         .load(url).fit().centerCrop().into(this)
 }
 
+@BindingAdapter("uploadAvatar")
+fun uploadAvatar(view: AvatarView, url: String) {
+    Picasso.get()
+        .load(url).fit().centerCrop().into(view)
+}
 

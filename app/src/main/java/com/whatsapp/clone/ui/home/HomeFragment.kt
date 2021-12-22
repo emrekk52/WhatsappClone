@@ -1,6 +1,5 @@
 package com.whatsapp.clone.ui.home
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -12,33 +11,27 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.drawable.DrawableCompat
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.badge.BadgeDrawable
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.whatsapp.clone.R
 import com.whatsapp.clone.databaseprocess.firebase_CRUD
-import com.whatsapp.clone.databinding.FragmentHomeBinding
 import com.whatsapp.clone.extensions.animateFab
 import com.whatsapp.clone.extensions.dialogShow
 import com.whatsapp.clone.extensions.toastShow
-import com.whatsapp.clone.fragments.ChatsFragment
+import com.whatsapp.clone.fragments.CallFragment
 import com.whatsapp.clone.fragments.StoryFragment
 import com.whatsapp.clone.ui.EmptyFragment
 import com.whatsapp.clone.ui.chat_list.ChatListFragment
-import com.whatsapp.clone.viewModel.ChatViewModel
 import com.whatsapp.clone.viewModel.StoryViewModel
-import com.whatsapp.clone.viewModel.UnreadMessageCountViewModel
 
 private const val INDEX_OF_CAMERA = 0
 private const val INDEX_OF_CHATS = 1
@@ -62,6 +55,8 @@ class TabsAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
         }
 
         INDEX_OF_STATUS -> StoryFragment()
+
+        INDEX_OF_CALLS->CallFragment()
 
 
         else -> EmptyFragment.newInstance(TAB_TITLES[position] ?: "")
@@ -113,7 +108,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         val fab: FloatingActionButton = fragmentView.findViewById(R.id.fabButton)
 
-        val viewModel: UnreadMessageCountViewModel by viewModels()
 
         fab.setOnClickListener {
             findNavController().navigate(
@@ -124,17 +118,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
 
 
-        viewModel._count.observe(viewLifecycleOwner, {
 
-            if (it > 0)
-                tabLayout.getTabAt(INDEX_OF_CHATS)?.orCreateBadge?.apply {
-                    number = it
-                    maxCharacterCount = 3
-                    isVisible = true
-                    backgroundColor = context?.getColor(R.color.tab_inactive)!!
-                    horizontalOffset = 10
-                }
-        })
 
 
 

@@ -19,7 +19,6 @@
     <color name="policy_color">#0EA9EF</color>
 
 
-
     <color name="tab_inactive">@color/green_light</color>
     <color name="tab_color">#075E54</color>
     <color name="statusbar_color">#128C7E</color>
@@ -38,5 +37,6 @@
     <color name="off_white">#e0e0e0</color>
     <color name="gray">#88898b</color>
     <color name="off_black">#383839</color>
+
 
 </resources>

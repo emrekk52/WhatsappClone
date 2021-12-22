@@ -36,12 +36,16 @@ import kotlin.collections.ArrayList
 import android.widget.Toast
 
 import android.app.ListActivity
+import android.content.Intent
 import android.graphics.Typeface
 import android.media.MediaPlayer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
 
 import androidx.recyclerview.widget.ItemTouchHelper
+import com.google.firebase.firestore.Query
+import com.whatsapp.clone.VideoCallActivity
+import com.whatsapp.clone.VoiceCallActivity
 import com.whatsapp.clone.extensions.*
 
 
@@ -51,7 +55,7 @@ class ChatsFragment : Fragment() {
     private lateinit var binding: FragmentChatsBinding
     lateinit var adapter: MessageListAdapter
     lateinit var viewModel: ChatViewModel
-    var list = arrayListOf<Message>()
+    private var list = arrayListOf<Message>()
 
 
     var simpleItemTouchCallback: ItemTouchHelper.SimpleCallback = object :
@@ -114,7 +118,20 @@ class ChatsFragment : Fragment() {
         if (item.itemId == android.R.id.home) {
             findNavController().navigateUp()
             return true
+        } else if (item.itemId == R.id.miVideoCall) {
+            val intent = Intent(requireActivity(), VideoCallActivity::class.java)
+            intent.putExtra("profile_name", args.model.name)
+            intent.putExtra("profile_photo", args.model.profile_photo)
+            intent.putExtra("profile_id", args.model.profile_id)
+            startActivity(intent)
+        } else if (item.itemId == R.id.miCall) {
+            val intent = Intent(requireActivity(), VoiceCallActivity::class.java)
+            intent.putExtra("profile_name", args.model.name)
+            intent.putExtra("profile_photo", args.model.profile_photo)
+            intent.putExtra("profile_id", args.model.profile_id)
+            startActivity(intent)
         }
+
         return false
     }
 
@@ -186,6 +203,9 @@ class ChatsFragment : Fragment() {
 
         checkLastSeen()
 
+        val m_sound = MediaPlayer.create(requireContext(), R.raw.m_sound)
+        val s_sound = MediaPlayer.create(requireContext(), R.raw.s_sound)
+
 
         viewModel.getMessage(args.model.profile_id!!)
         viewModel.chat_list.observe(viewLifecycleOwner, {
@@ -203,22 +223,22 @@ class ChatsFragment : Fragment() {
                         smoothToScroll(adapter)
                         binding.messageRecyclerView.smoothScrollToPosition(adapter.itemCount - 1)
                         st = true
-                    } else if (list.size == it.size) {
-                        adapter.notifyDataSetChanged()
+                    }
+
+
+                if (list.size == it.size) {
+                    adapter.notifyDataSetChanged()
+                } else {
+                    list.add(it[it.size - 1])
+                    adapter.notifyItemInserted(list.size - 1)
+                    binding.messageRecyclerView.smoothScrollToPosition(adapter.itemCount - 1)
+
+                }
+                if (st)
+                    if (!it[it.size - 1].sender_id.equals(firebase_CRUD().getCurrentId())) {
+                        m_sound.start()
                     } else {
-                        list.add(it[it.size - 1])
-                        adapter.notifyItemInserted(list.size - 1)
-                        binding.messageRecyclerView.smoothScrollToPosition(adapter.itemCount - 1)
-
-                        // if (!it[it.size - 1].sender_id.equals(firebase_CRUD().getCurrentId()))
-                        val media = MediaPlayer.create(requireContext(), R.raw.m_sound)
-                        media.setOnPreparedListener {
-                            println("hazırım laa")
-                        }
-                        println("gedim hemen")
-                        media.start()
-
-
+                        s_sound.start()
                     }
 
 
@@ -294,30 +314,36 @@ class ChatsFragment : Fragment() {
     fun seenMessage(user_id: String) {
 
         val crud = firebase_CRUD()
-        crud.database.collection("channel").addSnapshotListener { value, error ->
+        crud.database.collection("channel").orderBy("message_send_time", Query.Direction.DESCENDING)
+            .addSnapshotListener { value, error ->
 
 
-            error?.let {
+                error?.let {
 
-                value?.documents?.forEach {
+                    value?.documents?.forEach {
 
 
-                    if (it["received_id"].toString()
-                            .equals(crud.getCurrentId()) && it["sender_id"].toString()
-                            .equals(user_id)
-                    ) {
+                        if (it["received_id"].toString()
+                                .equals(crud.getCurrentId()) && it["sender_id"].toString()
+                                .equals(user_id)
+                        ) {
 
-                        crud.database.collection("channel").document(it.id)
-                            .update("message_read_state", true)
+                            if ((it["message_read_state"] as Boolean) == false) crud.database.collection(
+                                "channel"
+                            )
+                                .document(it.id)
+                                .update("message_read_state", true)
+                            else
+                                return@forEach
+
+                        }
+
 
                     }
-
 
                 }
 
             }
-
-        }
 
 
     }

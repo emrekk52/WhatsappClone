@@ -7,6 +7,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="edittext_hint"><font size="40">––– –––</font></string>
     <integer name="anim_duration">200</integer>
-
-
+    <string name="agora_app_id">b8a70575b7fa4f2bb4ce613865148a89</string>
+    <string name="agora_token">006b8a70575b7fa4f2bb4ce613865148a89IADJbLDBu9frmtn+pOW9QTLwjQXKkqEei2RhV+ozZmx5iqrynWUAAAAAEACBOFkKtezBYQEAAQC07MFh</string>
+    <string name="agora_channel_name">chat</string>
 </resources>

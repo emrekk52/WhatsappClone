@@ -1,12 +1,10 @@
 package com.whatsapp.clone.ui.chat_list
 
-import agency.tango.android.avatarviewglide.GlideLoader
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -22,8 +20,6 @@ import com.whatsapp.clone.databinding.ListItemChatCustomBinding
 import com.whatsapp.clone.extensions.decryptWithAES
 import com.whatsapp.clone.model.MyProfileModel
 import com.whatsapp.clone.viewModel.ChatListViewModel
-import com.whatsapp.clone.viewModel.ChatViewModel
-import com.whatsapp.clone.viewModel.UnreadMessageCountViewModel
 
 
 class ChatListFragment : Fragment() {
@@ -49,12 +45,11 @@ class ChatListFragment : Fragment() {
 
         val viewModel = ViewModelProvider(this).get(ChatListViewModel::class.java)
 
-        val umcViewModel: UnreadMessageCountViewModel by viewModels()
 
 
         viewModel.getChatList()
         viewModel.modelChat.observe(viewLifecycleOwner, {
-            val adapter = ChatListAdapter(it, findNavController(), umcViewModel)
+            val adapter = ChatListAdapter(it, findNavController())
             binding.recylerView.adapter = adapter
         })
 
@@ -65,8 +60,7 @@ class ChatListFragment : Fragment() {
 
 class ChatListAdapter(
     val list: List<MyProfileModel>,
-    val find: NavController,
-    val umcViewModel: UnreadMessageCountViewModel
+    val find: NavController
 ) :
     RecyclerView.Adapter<ChatListAdapter.ViewHolder>() {
 
@@ -144,8 +138,7 @@ class ChatListAdapter(
                     lastmessage,
                     message_read_status!!,
                     sender_id,
-                    image!!, unreadCount,
-                    umcViewModel
+                    image!!, unreadCount
                 )
 
 

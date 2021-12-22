@@ -52,21 +52,22 @@ class ChatViewModel : ViewModel() {
     }
 
     private fun getMyProfile() {
-        crud.database.collection("users").document(crud.getCurrentId())
-            .addSnapshotListener { value, error ->
+        if (crud.auth.currentUser != null)
+            crud.database.collection("users").document(crud.getCurrentId())
+                .addSnapshotListener { value, error ->
 
-                val profile = MyProfileModel(
-                    value?.get("name").toString(),
-                    value?.get("profile_photo").toString(),
-                    value?.get("profile_id").toString(),
-                    value?.get("phone_number").toString(),
-                    value?.get("status").toString(),
-                    value?.get("token").toString(),
-                )
+                    val profile = MyProfileModel(
+                        value?.get("name").toString(),
+                        value?.get("profile_photo").toString(),
+                        value?.get("profile_id").toString(),
+                        value?.get("phone_number").toString(),
+                        value?.get("status").toString(),
+                        value?.get("token").toString(),
+                    )
 
-                _profile = profile
+                    _profile = profile
 
-            }
+                }
     }
 
     fun sendMessage(model: MyProfileModel) {
@@ -93,7 +94,7 @@ class ChatViewModel : ViewModel() {
                                 _profile.name!!,
                                 message.message.decryptWithAES().toString()
                             ),
-                            "f8pdhf1QQZa5WQx7aPeHn2:APA91bGxL_Kvopd6QU0jBhxhT-3eDxEGEUPuL7tdHciyVfVhXjEgW1grMU3PWiGYm2FVonNkjvqKJAgX9OcCWodtRoe9qvKDDM0A6PneLGToT8pHpLkVzy26gTEy8N2fBjQRbRLsuAU3"
+                            model.token.toString()
                         )
                     )
                 }

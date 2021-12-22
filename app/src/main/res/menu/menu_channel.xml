@@ -2,14 +2,21 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/miPhone"
+        android:id="@+id/miVideoCall"
+        android:icon="@drawable/videocall_icon"
+        app:showAsAction="ifRoom"
+        app:iconTint="@color/white"
+        android:title="Video Araması">
+    </item>
+    <item
+        android:id="@+id/miCall"
         android:icon="@drawable/call_icon"
         app:showAsAction="ifRoom"
         app:iconTint="@color/white"
-        android:title="Phone">
+        android:title="Arama">
     </item>
     <item
-        android:id="@+id/miCompose"
+        android:id="@+id/miSearch"
         android:icon="@drawable/search_icon"
         app:iconTint="@color/white"
         app:showAsAction="never"
