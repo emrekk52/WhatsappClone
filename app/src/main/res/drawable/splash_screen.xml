@@ -7,7 +7,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/whatsapp_logo" />
+            android:src="@drawable/splash_logo" />
     </item>
 
 

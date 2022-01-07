@@ -46,7 +46,7 @@ class FirebaseService : FirebaseMessagingService() {
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle(message.data["title"])
             .setContentText(message.data["message"])
-            .setSmallIcon(R.drawable.whatsapp)
+            .setSmallIcon(R.drawable.notification)
             .setLights(Color.YELLOW, 1000, 1000)
             .setColor(Color.parseColor("#16cc3e"))
             .setPriority(IMPORTANCE_MAX)

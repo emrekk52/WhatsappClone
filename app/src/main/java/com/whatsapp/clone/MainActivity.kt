@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = findNavController(R.id.nav_host_fragment)
         val navGraph = navHostFragment.navInflater.inflate(R.navigation.nav_graph)
 
+        navHostFragment.graph
+
         viewModel = ViewModelProvider(this).get(ChatViewModel::class.java)
         crud = firebase_CRUD()
 

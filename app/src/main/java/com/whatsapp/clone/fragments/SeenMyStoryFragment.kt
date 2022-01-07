@@ -20,6 +20,7 @@ import com.whatsapp.clone.databinding.FragmentSeenMyStoryBinding
 import com.whatsapp.clone.databinding.ListItemChatCustomBinding
 import com.whatsapp.clone.extensions.dialogShow
 import com.whatsapp.clone.extensions.toastShow
+import com.whatsapp.clone.extensions.upload
 import com.whatsapp.clone.model.MyProfileModel
 import com.whatsapp.clone.model.ProfileDatabase
 import com.whatsapp.clone.ui.chat_list.ChatStartFragmentDirections
@@ -116,11 +117,8 @@ class SeenAdapter(val list: List<MyProfileModel>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         holder.view.chatlist = list[position]
-        GlideLoader().loadImage(
-            holder.view.avatarView,
-            list[position].profile_photo,
-            list[position].name
-        )
+        holder.view.avatarView.upload(list[position].profile_photo.toString())
+
 
 
         holder.view.chatLastMessage.text = list[position].status

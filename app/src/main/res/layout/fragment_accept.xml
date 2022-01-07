@@ -24,7 +24,7 @@
         android:layout_width="280dp"
         android:layout_height="280dp"
         android:backgroundTint="@color/green"
-        android:src="@drawable/wallpaper"
+        android:src="@drawable/notification"
         app:layout_constraintBottom_toTopOf="@+id/tv_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

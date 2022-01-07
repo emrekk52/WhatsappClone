@@ -79,8 +79,10 @@ class StoryFragment : Fragment() {
         })
 
         viewModel.stories.observe(viewLifecycleOwner, {
-            val adapter = StoryAdapter(it, findNavController())
-            binding.storyRecycler.adapter = adapter
+            if (it.size > 0) {
+                val adapter = StoryAdapter(it, findNavController())
+                binding.storyRecycler.adapter = adapter
+            }
         })
 
 
@@ -192,8 +194,9 @@ class StoryAdapter(val list: List<StoryListModel>, val nav: NavController) :
         val size = list[position].storyList?.size!!
         holder.view.circularStatusView.setPortionsCount(size)
 
-        holder.view.storyTime.text =
-            calcStoryTime(list[position].storyList!![size - 1].story_time?.toDate()?.time!!)
+        if (size > 0)
+            holder.view.storyTime.text =
+                calcStoryTime(list[position].storyList!![size - 1].story_time?.toDate()?.time!!)
 
         holder.view.clicklable.setOnClickListener {
             nav.navigate(
